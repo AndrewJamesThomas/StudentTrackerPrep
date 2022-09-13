@@ -8,4 +8,5 @@ Save raw data here. The slate query should include the following columns:
   <li>Last Name</li>
   <li>Suffix</li>
   <li>Birhdate</li> 
+  <li>Search date (application submitted date)</li>
 </ul>
