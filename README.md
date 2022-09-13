@@ -10,19 +10,19 @@ Before you begin make sure you have the following tools installed on your comput
 </ul>
 
 ## Step 1: Slate Query
-Start by building a Slate query with the following exports. Note that these exact fields must be used, but you may use whatever filters you need.
+Start by building a Slate query with the following exports. Note that these exact fields (And exact names) must be used, but you may use whatever filters you need. 
 
 <ul>
-  <li>Application/Student ID</li>
-  <li>First Name</li>
-  <li>Middle Name</li>
-  <li>Last Name</li>
+  <li>Application Slate ID</li>
+  <li>First</li>
+  <li>Middle</li>
+  <li>Last</li>
   <li>Suffix</li>
   <li>Birthdate</li> 
-  <li>Search date (application submitted date)</li>
+  <li>Submitted</li>
 </ul>
 
-The Slate query should resemble this. Again, there is not much flexibility as to what exports you can use. It is possible to use a different person ID field or a different search date, but this is generally not recommended.
+The Slate query should resemble this.
 
 <img src="https://github.com/thomasandr/StudentTrackerPrep/blob/main/assets/query.jpg">
 
