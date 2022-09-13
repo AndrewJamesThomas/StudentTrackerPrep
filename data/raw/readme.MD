@@ -1,4 +1,5 @@
-<i><b>Note:</b> For FERPA reasons, no data is included in this repo</i>
+<i><b>Note:</b> For FERPA reasons, no data is included in this repo</i><br/>
+<b>Instructions:</b>
 Save raw data here. The slate query should include the following columns:
 <ul>
   <li>Application/Student ID</li>
