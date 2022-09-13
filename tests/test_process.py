@@ -11,14 +11,6 @@ def test_load_data():
     assert data.df.shape[1] == 7, "Incorrect number of columns"
 
 
-def test_format_cols():
-    data.format_cols()
-    df = data.df
-    assert df["middle_name"].apply(lambda x: x is np.nan or len(str(x)) <= 1).all(), "Incorrect Middle Name Field"
-    assert df["birthdate"].apply(lambda x: x is np.nan or len(str(x)) == 8).all(), "Birthdate in incorrect format."
-    assert df["start_search_date"].apply(lambda x: x is np.nan or len(str(x)) == 8).all(), "Search date in incorrect format."
-
-
 def test_add_additional_cols():
     data.add_additional_cols()
     new_cols = ["record_type", "ssn", "blank_col", "school_code", "branch_code"]
@@ -29,4 +21,12 @@ def test_add_additional_cols():
     assert all(data.df["blank_col"] == ""), "Error in Blank Col"
     assert all(data.df["school_code"] == "001371"), "Error in school code"
     assert all(data.df["branch_code"] == "00"), "Error in branch code"
+
+
+def test_format_cols():
+    data.format_cols()
+    df = data.df
+    assert df["Middle"].apply(lambda x: x is np.nan or len(str(x)) <= 1).all(), "Incorrect Middle Name Field"
+    assert df["Birthdate"].apply(lambda x: x is np.nan or len(str(x)) == 8).all(), "Birthdate in incorrect format."
+    assert df["Application Slate ID"].apply(lambda x: x is np.nan or len(str(x)) == 8).all(), "Search date in incorrect format."
 
