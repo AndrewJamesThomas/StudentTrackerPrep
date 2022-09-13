@@ -11,32 +11,30 @@ class CleanStudentTracker:
         :param file_name: str, name of the raw data file to be processed
         :return: pd.DataFrame
         """
-
         path = "data/raw/" + file_name
         self.df = pd.read_csv(path)
 
+    def add_additional_cols(self):
+        """
+        Add additional columns that are required by StudentTracker. These will be unchanged every time.
+        """
+        self.df["record_type"] = "D1"
+        self.df["ssn"] = ""
+        self.df["blank_col"] = ""
+        self.df["school_code"] = "001371"
+        self. df["branch_code"] = "00"
+
     def format_cols(self):
         """
-        Changes all fields to the correct formats and data types
-        :return:
+        Changes all fields to the correct formats and data types.
         """
-        self.df["middle_name"] = self.df["middle_name"].str[:1]
-        self.df["birthdate"] = pd.to_datetime(self.df["birthdate"]).dt.strftime("%Y%m%d")
-        self.df["start_search_date"] = pd.to_datetime(self.df["start_search_date"]).dt.strftime("%Y%m%d")
+        self.df["Middle"] = self.df["Middle"].str[:1]
+        self.df["Birthdate"] = pd.to_datetime(self.df["Birthdate"]).dt.strftime("%Y%m%d")
+        self.df["Application Slate ID"] = pd.to_datetime(self.df["Application Slate ID"]).dt.strftime("%Y%m%d")
 
 
 if __name__ == "__main__":
-    # correctly format all fields
-    df["middle_name"] = df["middle_name"].str[:1]
-    df["birthdate"] = pd.to_datetime(df["birthdate"]).dt.strftime("%Y%m%d")
-    df["start_search_date"] = pd.to_datetime(df["start_search_date"]).dt.strftime("%Y%m%d")
 
-    # Add additional columns/values required by StudentTracker
-    df["record_type"] = "D1"
-    df["ssn"] = ""
-    df["blank_col"] = ""
-    df["school_code"] = "001371"
-    df["branch_code"] = "00"
 
     # order column appropriately
     cols = ["record_type", "ssn", 'first_name', 'middle_name', 'last_name', 'suffix', 'birthdate',
