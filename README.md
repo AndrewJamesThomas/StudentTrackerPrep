@@ -22,7 +22,7 @@ Start by building a Slate query with the following exports. Note that these exac
   <li>Submitted</li>
 </ul>
 
-The Slate query should resemble this.
+The Slate query should resemble this:
 
 <img src="https://github.com/thomasandr/StudentTrackerPrep/blob/main/assets/query.jpg">
 
