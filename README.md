@@ -2,7 +2,7 @@
 This project aims to make it easier to process Slate data for clearinghouse StudentTracker (<a href="https://www.studentclearinghouse.org/colleges/studenttracker/">If you are unfamiliar with StudentTracker you can learn more about it here</a>). StudentTracker is a little finicky about how data is loaded into it, so it is important that attention is paid to make sure all requirements are met. Fortunately, this repo has everything you need to make this process as painless as possible.
 
 ## Step 1: Slate Query
-Start by building a Slate query with the following exports. Note that these exact exports must be used, but you may use whatever filters you need.
+Start by building a Slate query with the following exports. Note that these exact fields must be used, but you may use whatever filters you need.
 
 <ul>
   <li>Application/Student ID</li>
@@ -13,3 +13,7 @@ Start by building a Slate query with the following exports. Note that these exac
   <li>Birhdate</li> 
   <li>Search date (application submitted date)</li>
 </ul>
+
+The Slate query should resemble this. Again, there is not much flexability as to what exports you can use. It is possible to use a different person ID field or a different search date, but this is generally not recommended.
+
+<img src="https://github.com/thomasandr/StudentTrackerPrep/blob/main/assets/query.jpg">
