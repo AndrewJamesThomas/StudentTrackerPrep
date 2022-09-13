@@ -84,6 +84,5 @@ class CleanStudentTracker:
 
 
 if __name__ == "__main__":
-    FILE_NAME = ""
     data = CleanStudentTracker(FILE_NAME)
     data.process_all_data()
