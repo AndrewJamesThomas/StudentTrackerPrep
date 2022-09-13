@@ -25,15 +25,17 @@ cols = ["record_type", "ssn", 'first_name', 'middle_name', 'last_name', 'suffix'
 df = df[cols]
 
 # Save to excel
-df.to_excel("data/clean/test.xlsx", index=False)
+current_date = datetime.now().strftime("%Y%m%d")
+path = "data/clean/studenttracer_data_" + current_date + ".xlsx"
+df.to_excel(path, index=False)
 
-wb = xw.Book("data/clean/test.xlsx")
+wb = xw.Book(path)
 ws = wb.sheets["Sheet1"]
 ws.range("1:1").clear_contents()
 
 # Add header
-ws.range("A1:G1").value = ["H1", "001371", "00", "University of Denver",
-                           datetime.now().strftime("%Y%m%d"),
+ws.range("A1:G1").value = ["H1", "001371", "'00", "University of Denver",
+                           current_date,
                            "DA", "I"]
 
 # Add footer
@@ -42,4 +44,4 @@ footer_cell_1 = "A" + str(total_rows)
 footer_cell_2 = "B" + str(total_rows)
 
 ws.range(footer_cell_1).value = "T1"
-ws.range(footer_cell_2).value=total_rows
+ws.range(footer_cell_2).value = total_rows
