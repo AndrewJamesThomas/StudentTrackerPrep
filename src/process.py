@@ -3,8 +3,9 @@ from datetime import datetime
 import xlwings as xw
 
 ################################################
-# UPDATE THIS
-FILE_NAME = "Quick Query 20220913-121846.csv"
+# UPDATE THESE
+INPUT_FILE_NAME = "Quick Query 20220913-121846.csv"
+OUTPUT_FILE_NAME = "dcb-20220913-StudentClearingHouseData"
 ################################################
 
 
@@ -84,5 +85,5 @@ class CleanStudentTracker:
 
 
 if __name__ == "__main__":
-    data = CleanStudentTracker(FILE_NAME)
-    data.process_all_data()
+    data = CleanStudentTracker(INPUT_FILE_NAME)
+    data.process_all_data(OUTPUT_FILE_NAME)
