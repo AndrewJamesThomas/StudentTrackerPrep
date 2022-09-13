@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import os
 from src.process import CleanStudentTracker
 
 data = CleanStudentTracker("test_data.csv")
@@ -30,3 +31,17 @@ def test_format_cols():
     assert df["Birthdate"].apply(lambda x: x is np.nan or len(str(x)) == 8).all(), "Birthdate in incorrect format."
     assert df["Application Slate ID"].apply(lambda x: x is np.nan or len(str(x)) == 8).all(), "Search date in incorrect format."
 
+
+def test_rearrange_cols():
+    data.rearrange_cols()
+    df = data.df
+    correct_cols = all(["record_type", "ssn", 'First', 'Middle', 'Last', 'Suffix', 'Birthdate', 'Submitted',
+                        "blank_col", "school_code", "branch_code", 'Application Slate ID'] == df.keys())
+    assert correct_cols, "Check column names and order"
+
+
+def test_save_to_excel():
+    data.save_to_excel("test_output")
+    saved_files = os.listdir("data/clean")
+
+    assert "test_output.xlsx" in saved_files, "File did not save appropriately."
