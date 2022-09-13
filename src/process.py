@@ -1,7 +1,11 @@
 import pandas as pd
 from datetime import datetime
 import xlwings as xw
+
+################################################
+# UPDATE THIS
 FILE_NAME = "Quick Query 20220913-121846.csv"
+################################################
 
 
 class CleanStudentTracker:
@@ -72,6 +76,14 @@ class CleanStudentTracker:
         ws.range(footer_cell_1).value = "T1"
         ws.range(footer_cell_2).value = total_rows
 
+    def process_all_data(self, output_filename):
+        self.add_additional_cols()
+        self.format_cols()
+        self.rearrange_cols()
+        self.save_to_excel(output_filename)
+
 
 if __name__ == "__main__":
-    pass
+    FILE_NAME = ""
+    data = CleanStudentTracker(FILE_NAME)
+    data.process_all_data()
