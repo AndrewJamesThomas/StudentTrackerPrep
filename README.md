@@ -18,18 +18,18 @@ Start by building a Slate query with the following exports. Note that these exac
   <li>Middle Name</li>
   <li>Last Name</li>
   <li>Suffix</li>
-  <li>Birhdate</li> 
+  <li>Birthdate</li> 
   <li>Search date (application submitted date)</li>
 </ul>
 
-The Slate query should resemble this. Again, there is not much flexability as to what exports you can use. It is possible to use a different person ID field or a different search date, but this is generally not recommended.
+The Slate query should resemble this. Again, there is not much flexibility as to what exports you can use. It is possible to use a different person ID field or a different search date, but this is generally not recommended.
 
 <img src="https://github.com/thomasandr/StudentTrackerPrep/blob/main/assets/query.jpg">
 
 With your query built, you should download this github repo to your desktop and save the query as a csv in the "data/clean" directory.
 
 ## Step 2: Run Python Script
-With the data downloaded, open the process.py file in the /src directory using your prefered python IDE. Update the FILE_NAME variable to match the name of the csv you just downloaded from Slate. Next, run the script! An excel document should open with all of your data correctly formatted.
+With the data downloaded, open the process.py file in the /src directory using your preferred python IDE. Update the FILE_NAME variable to match the name of the csv you just downloaded from Slate. Next, run the script! An excel document should open with all of your data correctly formatted.
 
 ## Step 3: QC and sending to IR
 Your data should be ready at this point, but take a second anyways to look it over and make sure it matches the requirements detailed in the "NSC FTP Tracker Instructions" (included in this repo). Once you are satisfied, <b>save the file as a .txt file</b>. This is important. 
